@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Overpass&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+$Dark-Blue: hsl(218, 23%, 16%);
+$Grayish-Blue: hsl(217, 19%, 38%);
+$Dark-Grayish-Blue: hsl(217, 19%, 24%);
+$Light-Cyan: hsl(193, 38%, 86%);
+$Neon-Green: hsl(150, 100%, 66%);
+
+body {
+  margin: 0;
+  background-color: $Dark-Blue;
+  font-family: "Manrope", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.advice_card {
+  background-color: $Dark-Grayish-Blue;
+  color: $Light-Cyan;
+  padding: 2.5em 1.5em 2em 1.5em;
+  width: min(90%, 337.5px);
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .advice_header {
+    font-size: .75rem;
+    letter-spacing: .25em;
+    color: $Neon-Green;
+  }
+
+  .marks {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .advice_quote {
+    margin-top: .5em;
+    font-size: min(10vw, 28px);
+    width: 100%;
+  }
+
+  .divider {
+    margin: 2em 0;
+    width: 100%;
+    height: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+
+    background-image: url("../images/pattern-divider-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .advice_button {
+    background-color: $Neon-Green;
+    border: none;
+    border-radius: 50%;
+    padding: 1.5em;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -2.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    &:hover {
+      box-shadow: 0 0 30px $Neon-Green;
+    }
+  }
+}
+
+@media (min-width: 640px){
+  .advice_card {
+    width: 525px;
+
+    .advice_quote {
+      width: 444px;
+    }
+
+    .divider {
+      width: 444px;
+      background-image: url("../images/pattern-divider-desktop.svg");
+    }
+  }
+}
